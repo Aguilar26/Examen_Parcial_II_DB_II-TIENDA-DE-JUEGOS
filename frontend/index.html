@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos II - CRUD -Tienda de Juegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Base de Datos II - Tienda de Juegos / MongoDB</h1>
+        <button class="btn-agregar" onclick="mostrarFormulario()">+ Agregar Juego</button>
+    </div>
+
+    <!-- Formulario para Crear/Editar -->
+    <div id="formulario-modal" class="modal oculto">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
+            <h2 id="form-titulo">Agregar Juego</h2>
+            <form id="juego-form">
+                <input type="hidden" id="juego-id">
+                
+                <label>Nombre:</label>
+                <input type="text" id="nombre" required>
+                
+                <label>Categoría:</label>
+                <input type="text" id="categoria" required>
+                
+                <label>Descripción:</label>
+                <textarea id="descripcion" required></textarea>
+                
+                <label>Precio:</label>
+                <input type="number" id="precio" step="0.01" required>
+                
+                <label>URL Imagen:</label>
+                <input type="url" id="imagen" required>
+                
+                <label>Plataformas (separadas por coma):</label>
+                <input type="text" id="plataformas" placeholder="PC, PS5, Xbox">
+                
+                <label>Stock:</label>
+                <input type="number" id="stock" required>
+                
+                <div class="form-botones">
+                    <button type="submit" class="btn-guardar">Guardar</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarFormulario()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de Juegos -->
+    <div class="contenedor">
+        <h2 class="seccion-titulo">Catálogo</h2>
+        <div id="juegos-lista"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

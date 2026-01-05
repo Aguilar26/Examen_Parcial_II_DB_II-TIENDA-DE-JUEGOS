@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #111;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.btn-agregar {
+    background-color: #fff;
+    color: #0a0a0a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-agregar:hover {
+    background-color: #ddd;
+}
+
+.contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.seccion-titulo {
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 0 30px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+}
+
+.juego {
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid #1a1a1a;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.juego:hover {
+    padding-left: 10px;
+}
+
+.juego-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.juego-imagen {
+    width: 250px;
+    height: 150px;
+    flex-shrink: 0;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.juego-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: all 0.5s;
+}
+
+.juego:hover .juego-imagen img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.categoria {
+    color: #666;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.nombre-juego {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.descripcion {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.juego-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.precio {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.stock {
+    color: #666;
+    font-size: 12px;
+}
+
+.btn-editar, .btn-eliminar {
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #fff;
+    color: #0a0a0a;
+    border-color: #fff;
+}
+
+.btn-eliminar:hover {
+    background-color: #f44;
+    color: #fff;
+    border-color: #f44;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal.activo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border: 1px solid #333;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.cerrar {
+    color: #888;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #fff;
+}
+
+#form-titulo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+form label {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+form input, form textarea {
+    width: 100%;
+    background-color: #0a0a0a;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-guardar {
+    flex: 1;
+    background-color: #fff;
+    color: #0a0a0a;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-guardar:hover {
+    background-color: #ddd;
+}
+
+.btn-cancelar {
+    flex: 1;
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cancelar:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.oculto {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .juego {
+        flex-direction: column-reverse;
+    }
+
+    .juego-imagen {
+        width: 100%;
+        height: 200px;
+    }
+
+    .modal-contenido {
+        padding: 30px 20px;
+    }
+}
